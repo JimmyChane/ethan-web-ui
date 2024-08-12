@@ -1,0 +1,32 @@
+#app {
+  --background-color: #182a41;
+  --actionbar-height: 4.5rem;
+  --content-max-width: 90rem;
+  --content-max-width: 80rem;
+
+  width: 100vw;
+  height: 100dvh;
+  color: #ffffffaa;
+  color: hsla(0, 0%, 100%, 0.8);
+
+  background: var(--background-color);
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+
+  font-family: "Roboto", sans-serif;
+}
+* {
+  word-break: break-word;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100dvh;
+  display: flex;
+}

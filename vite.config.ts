@@ -9,10 +9,10 @@ export default defineConfig({
   plugins: [
     vue(),
     VitePWA({
-      registerType: "autoUpdate",
+      registerType: "prompt",
       manifest: {
-        name: "Rhougous Hiroki",
-        short_name: "Rhougous",
+        name: "Ethan",
+        short_name: "Ethan",
         icons: [
           { src: "/icon/favicon-16.png", sizes: "16x16", type: "image/png" },
           { src: "/icon/favicon-32.png", sizes: "32x32", type: "image/png" },

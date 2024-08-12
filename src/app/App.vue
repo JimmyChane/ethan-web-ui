@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import { onMounted, ref, watch } from "vue";
   import { RouterView, useRoute } from "vue-router";
-  import Actionbar from "@/components/Actionbar.vue";
+  import Actionbar from "./App-Actionbar.vue";
   import AppBackground from "./App-Background.vue";
 
   // background

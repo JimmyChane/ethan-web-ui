@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { onMounted, ref } from "vue";
-  import Social from "./SocialItem.vue";
+  import Social from "./home/SocialItem.vue";
 
   // icon
   import TelegramIcon from "@/assets/icon/telegram-bk.svg";
@@ -69,10 +69,6 @@
     transition: all 400ms ease;
     opacity: 0;
     transform: translateY(0.5rem);
-    &[data-show="true"] {
-      opacity: 1;
-      transform: translateY(0);
-    }
 
     width: 100%;
     height: calc(100dvh - var(--actionbar-height));
@@ -81,6 +77,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
+    &[data-show="true"] {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     .home-content {
       width: 100%;

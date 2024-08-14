@@ -1,18 +1,7 @@
-<script setup lang="ts">
-  import { onMounted, ref } from "vue";
-
-  onMounted(() => {
-    setTimeout(() => {
-      show.value = true;
-    }, 100);
-  });
-  const show = ref(false);
-</script>
-
 <template>
-  <div class="about-page" :data-show="show">
+  <div class="section-about">
     <div class="about-title">
-      <h1>Rhougous Hiroki</h1>
+      <h1>About Ethan</h1>
       <div class="about-title-labels">
         <span>220 Years Old</span>
         <span>Male</span>
@@ -81,81 +70,76 @@
 </template>
 
 <style scoped lang="scss">
-  .about-page {
-    transition: all 400ms ease;
-    opacity: 0;
-    transform: translateY(0.5rem);
+.section-about {
+  transition: all 400ms ease;
 
+  width: 100%;
+  max-width: var(--content-max-width);
+  min-height: 100dvh;
+
+  gap: 4rem;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  .about-title {
     width: 100%;
-    max-width: var(--content-max-width);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    color: white;
 
-    gap: 4rem;
-    padding: 2rem;
+    .about-title-labels {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      font-size: 0.7rem;
+      gap: 0.2em;
+      & > * {
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 2em;
+        padding: 0.4em 0.8em;
+      }
+    }
+  }
+  .about-section {
+    width: 100%;
+    max-width: 40rem;
 
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
-    &[data-show="true"] {
-      opacity: 1;
-      transform: translateY(0);
+    color: white;
+    & > h3 {
+      text-align: start;
+      width: 100%;
+      padding-block: 1rem;
+      font-size: 1.4rem;
+      letter-spacing: 0.2rem;
     }
-
-    .about-title {
+    .about-row {
       width: 100%;
       display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-      color: white;
+      flex-direction: row;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-block: 1rem;
 
-      .about-title-labels {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        font-size: 0.7rem;
-        gap: 0.2em;
-        & > * {
-          background: rgba(0, 0, 0, 0.5);
-          border-radius: 2em;
-          padding: 0.4em 0.8em;
-        }
+      &:first-child {
+        border-top: none;
       }
-    }
-    .about-section {
-      width: 100%;
-      max-width: 40rem;
 
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      color: white;
-      & > h3 {
-        text-align: start;
-        width: 100%;
-        padding-block: 1rem;
-        font-size: 1.4rem;
-        letter-spacing: 0.2rem;
-      }
-      .about-row {
-        width: 100%;
+      .about-section-contents {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        padding-block: 1rem;
-
-        &:first-child {
-          border-top: none;
-        }
-
-        .about-section-contents {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-end;
-          text-align: end;
-          color: white;
-        }
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: end;
+        color: white;
       }
     }
   }
+}
 </style>

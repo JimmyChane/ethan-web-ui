@@ -17,6 +17,7 @@
   justify-content: stretch;
 
   font-family: "Roboto", sans-serif;
+  color-scheme: dark;
 }
 * {
   word-break: break-word;

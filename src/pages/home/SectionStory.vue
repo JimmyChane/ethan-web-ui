@@ -1,18 +1,7 @@
-<script setup lang="ts">
-  import { onMounted, ref } from "vue";
-
-  onMounted(() => {
-    setTimeout(() => {
-      show.value = true;
-    }, 100);
-  });
-  const show = ref(false);
-</script>
-
 <template>
-  <div class="story-page" :data-show="show">
+  <div class="section-story">
     <div class="story-title">
-      <h1>Rhougous Hiroki</h1>
+      <h1>Story</h1>
     </div>
 
     <p class="story-plot">
@@ -138,43 +127,33 @@
 </template>
 
 <style scoped lang="scss">
-  .story-page {
-    transition: all 400ms ease;
-    opacity: 0;
-    transform: translateY(0.5rem);
+.section-story {
+  transition: all 400ms ease;
 
-    gap: 1rem;
-    padding: 2rem;
+  width: 100%;
+  max-width: var(--content-max-width);
+  min-height: 100dvh;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  gap: 2rem;
+  padding: 2rem;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  .story-title {
     width: 100%;
-    max-width: var(--content-max-width);
-
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    gap: 2rem;
-
-    &[data-show="true"] {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .story-title {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-      & > h1 {
-        color: white;
-      }
-    }
-
-    .story-plot {
-      font-size: 0.8rem;
+    gap: 0.2rem;
+    & > h1 {
+      color: white;
     }
   }
+
+  .story-plot {
+    font-size: 0.8rem;
+  }
+}
 </style>

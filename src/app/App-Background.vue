@@ -1,30 +1,28 @@
 <script setup lang="ts">
-  import { onMounted, ref, watch } from "vue";
+import { onMounted, ref, watch } from "vue";
 
-  const props = defineProps({
-    src: { type: String, required: true },
-  });
+const props = defineProps<{ src: string }>();
 
-  watch(() => props.src, reset);
+const timeUpdate = ref(0);
+const imageLoaded = ref(false);
+const imageSrc = ref("");
 
-  onMounted(reset);
+function onImageLoad() {
+  imageLoaded.value = true;
+}
+function reset() {
+  const time = (timeUpdate.value = Date.now());
+  imageSrc.value = "";
+  setTimeout(() => {
+    if (time !== timeUpdate.value) return;
+    imageLoaded.value = false;
+    imageSrc.value = props.src;
+  }, 100);
+}
 
-  const timeUpdate = ref(0);
-  const imageLoaded = ref(false);
-  const imageSrc = ref("");
+watch(() => props.src, reset);
 
-  function onImageLoad() {
-    imageLoaded.value = true;
-  }
-  function reset() {
-    const time = (timeUpdate.value = Date.now());
-    imageSrc.value = "";
-    setTimeout(() => {
-      if (time !== timeUpdate.value) return;
-      imageLoaded.value = false;
-      imageSrc.value = props.src;
-    }, 100);
-  }
+onMounted(reset);
 </script>
 
 <template>
@@ -38,23 +36,23 @@
 </template>
 
 <style scoped lang="scss">
-  .app-background {
-    display: flex;
-    object-fit: cover;
-    pointer-events: none;
+.app-background {
+  display: flex;
+  object-fit: cover;
+  pointer-events: none;
 
-    width: 100%;
-    height: 100%;
-    min-width: 100%;
-    min-height: 100%;
-    max-width: 100%;
-    max-height: 100%;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 
-    transition: all 400ms ease;
+  transition: all 400ms ease;
 
-    opacity: 0;
-    &[data-loaded="true"] {
-      opacity: 1;
-    }
+  opacity: 0;
+  &[data-loaded="true"] {
+    opacity: 1;
   }
+}
 </style>

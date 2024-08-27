@@ -1,16 +1,18 @@
 <script setup lang="ts">
-defineProps<{ href: string; icon: string; text: string }>();
+import type { SocialModel } from "@/model/Social";
+
+defineProps<{ social: SocialModel }>();
 </script>
 
 <template>
-  <a class="social-item" :href="href" target="_blank">
-    <img v-if="icon" :src="icon" />
-    <span>{{ text }}</span>
+  <a class="social" :href="social.href" target="_blank">
+    <img :src="social.icon" />
+    <span>{{ social.title }}</span>
   </a>
 </template>
 
 <style scoped lang="scss">
-.social-item {
+.social {
   color: white;
   border-radius: 0.3em;
 

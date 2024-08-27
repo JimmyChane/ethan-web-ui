@@ -11,7 +11,7 @@ export default defineConfig({
     VitePWA({
       registerType: "prompt",
       manifest: {
-        name: "Ethan",
+        name: "Ethan Fairfang",
         short_name: "Ethan",
         icons: [
           { src: "/icon/favicon-16.png", sizes: "16x16", type: "image/png" },

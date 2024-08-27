@@ -1,13 +1,13 @@
 import type { Component } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
 
-export interface Navigation {
+export interface NavigationModel {
   id: string;
   path: string;
   component: () => Component;
 }
 
-export const HOME: Navigation = {
+export const HOME: NavigationModel = {
   id: "home",
   path: "/",
   component: () => import("@/pages/PageHome.vue"),

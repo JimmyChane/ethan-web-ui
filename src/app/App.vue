@@ -2,7 +2,7 @@
 import { onMounted, ref, watch } from "vue";
 import { RouterView, useRoute } from "vue-router";
 import AppBackground from "./App-Background.vue";
-import HomeBackground from "@/assets/bg/bg-home.webp";
+import HomeBackground from "@/assets/bg/bg-home.jpg";
 import { HOME } from "@/router";
 
 const route = useRoute();
@@ -49,7 +49,7 @@ onMounted(() => {
 <template>
   <div class="app">
     <div class="app-background-parent" :data-show="show">
-      <AppBackground :style="{ 'z-index': '1' }" :src="appBackground" />
+      <!-- <AppBackground :style="{ 'z-index': '1' }" :src="appBackground" /> -->
     </div>
 
     <div class="app-body" :style="{ 'z-index': '2' }" ref="refAppBody" @scroll="onScroll">

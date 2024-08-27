@@ -1,5 +1,5 @@
 #app {
-  --background-color: #22272B;
+  --background-color: #22272b;
   --actionbar-height: 4.5rem;
   --content-max-width: 90rem;
   --content-max-width: 80rem;
@@ -30,4 +30,8 @@ body {
   width: 100vw;
   height: 100dvh;
   display: flex;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }

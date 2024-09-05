@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computedAsync } from "@vueuse/core";
-import HomeBanner from "./home/section/HomeBanner.vue";
-import HomeOtherFursonas from "./home/section/HomeOtherFursonas.vue";
+import HomeBanner from "./components/HomeBanner.vue";
+import HomeOtherFursonas from "./components/HomeOtherFursonas.vue";
 
 const show = computedAsync(async () => {
   await new Promise((r) => setTimeout(r, 100));

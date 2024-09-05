@@ -10,7 +10,7 @@ export interface NavigationModel {
 export const HOME: NavigationModel = {
   id: "home",
   path: "/",
-  component: () => import("@/pages/PageHome.vue"),
+  component: () => import("@/pages/home/PageHome.vue"),
 };
 
 export const router = createRouter({
